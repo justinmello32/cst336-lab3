@@ -5,12 +5,14 @@
 	<title> Sign Up Page </title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 	<div class="container">
-		<h1>Sign Up</h1>
+		<h1 class="text-center">Sign Up Form</h1>
 
+		<div class="card">
 		<form id="signupForm" action="welcome.html">
 			<div class="form-group">
 				<label for="firstName">First Name</label>
@@ -40,14 +42,14 @@
 			</div>
 
 		    State:
-		    <select id="state" name="state">
+		    <select multiple class="form-control" id="state" name="state">
 		    	<option>Select One</option>
 		    	<option value="ca"> California </option>
 		    	<option value="ny"> New York   </option>
 		    	<option value="tx"> Texas      </option>
 		    </select><br>
 
-		    Select a County: <select id="county"></select><br>
+		    Select a County: <select multiple class="form-control" id="county"></select><br>
 
 		    <div class="form-group">
 			  <label for="username">Desired Username</label>
@@ -59,8 +61,14 @@
 	          <input type="password" class="form-control" id="passwordAgain" name="username"><br>
 			  <span id="passwordAgainError" class="text-danger"></span>
 		    </div>
-		    <input type="submit" value="Sign up!">
+		    <div class="row">
+		    	<div class="col text-center">
+		    		<input type="submit" class="btn btn-primary" value="Sign up!">
+		    	</div>
+		    </div>
 		</form>
+		</div>
+		<br>
 	</div>
     <script>
 
