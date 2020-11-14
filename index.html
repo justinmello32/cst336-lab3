@@ -3,43 +3,65 @@
 
 <head>
 	<title> Sign Up Page </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
+	<div class="container">
+		<h1>Sign Up</h1>
 
-	<h1>Sign Up</h1>
+		<form id="signupForm" action="welcome.html">
+			<div class="form-group">
+				<label for="firstName">First Name</label>
+				<input id ="firstName" type="text" class="form-control" name="fName" placeholder="Enter first name">
+				<label for="firstName">Last Name</label>
+				<input id="lastName" type="text" class="form-control" name="lName" placeholder="Enter last name">
+				
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="gender" id="m" value="m">
+					<label class="form-check-label" for="m">
+						Male
+					</label>
+				</div>
+				<div class="form-check">
+					<input class="form-check-input" type="radio" name="gender" id="f" value="f">
+					<label class="form-check-label" for="f">
+						Female
+					</label>
+				</div>
+			</div>
 
-	<form id="signupForm" action="welcome.html">
-		First Name: <input type="text" name="fName"><br>
-		Last Name:  <input type="text" name="lName"><br>
-		Gender:     <input type="radio" name="gender" value="m">
-					<input type="radio" name="gender" valule="f">
+			<div class="form-group">
+				Zip Code:   <input type="text" id="zip" class="form-control" name="zip">
+				City:       <span id="city"></span><br>
+				Latitude:   <span id="latitude"></span><br>
+			    Longitude:  <span id="Longitude"></span><br>
+			</div>
 
-		Zip Code:   <input type="text" id="zip" name="zip"><br>
-		City:       <span id="city"></span><br>
-		Latitude:   <span id="latitude"></span><br>
-	    Longitude:  <span id="Longitude"></span><br>
+		    State:
+		    <select id="state" name="state">
+		    	<option>Select One</option>
+		    	<option value="ca"> California </option>
+		    	<option value="ny"> New York   </option>
+		    	<option value="tx"> Texas      </option>
+		    </select><br>
 
-	    State:
-	    <select id="state" name="state">
-	    	<option>Select One</option>
-	    	<option value="ca"> California </option>
-	    	<option value="ny"> New York   </option>
-	    	<option value="tx"> Texas      </option>
-	    </select><br>
+		    Select a County: <select id="county"></select><br>
 
-	    Select a County: <select id="county"></select><br>
-
-	    Disired Username: <input type="text" id="username" name="username"><br>
-	    			      <span id="usernameError"></span><br>
-	    Password          <input type="password" id="password" name="password"><br>
-	    Password Again:   <input type="password" id="passwordAgain" name="username"><br>
-	    				  <span id="passwordAgainError"></span><br/><br>
-
-	    <input type="submit" value="Sign up!">
-	</form>
-
+		    <div class="form-group">
+			  <label for="username">Desired Username</label>
+	          <input type="text" class="form-control" id="username" name="username"><br>
+		      <span id="usernameError"></span><br>
+		      <label for="password">Password</label>
+	          <input type="password" class="form-control" id="password" name="password"><br>
+	          <label for="password">Password Again</label>
+	          <input type="password" class="form-control" id="passwordAgain" name="username"><br>
+			  <span id="passwordAgainError" class="text-danger"></span>
+		    </div>
+		    <input type="submit" value="Sign up!">
+		</form>
+	</div>
     <script>
 
     	var usernameAvailable = false;
