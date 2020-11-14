@@ -17,8 +17,8 @@
 
 	Zip Code:   <input type="text" id="zip" name="zip"><br>
 	City:       <span id="city"></span><br>
-	Latitude:   <br>
-    Longitude:  <br><br>
+	Latitude:   <span id="latitude"></span><br>
+    Longitude:  <span id="Longitude"></span><br>
 
     State:
     <select id="state" name="state">
@@ -44,11 +44,13 @@
 
     		// alert($("#zip").val())
     		let zipCode = $("#zip").val();	
-    		let url =`https://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php?zip=${zipCode}`;
+    		let url =  `https://itcdland.csumb.edu/~milara/ajax/cityInfoByZip?zip=${zipCode}`;
     		let response = await fetch(url);
     		let data = await response.json();
     		console.log(data);
-
+    		$("#city").html(data.city);
+    		$("#latitude").html(data.latitude);
+			$("#Longitude").html(data.longitude);
  
 
 
