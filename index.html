@@ -28,7 +28,7 @@
     	<option value="tx"> Texas      </option>
     </select><br>
 
-    Select a c County: <select id="county"></select><br>
+    Select a County: <select id="county"></select><br>
 
     Disired Username: <input type="text" id="username" name="username"><br>
     Password          <input type="password" id="password" name="password"><br>
@@ -52,10 +52,21 @@
     		$("#latitude").html(data.latitude);
 			$("#Longitude").html(data.longitude);
  
-
-
-
     	});//zip
+
+    	$("#state").on("change", async function(){
+    		// alert($("#state").val())
+    		let state = $("#state").val();
+    		let url = `https://itcdland.csumb.edu/~milara/ajax/countyList.php?state=${state}`;
+    		let response = await fetch(url);
+    		let data = await response.json();
+    		console.log(data);
+    		$("#county").html(`<option> Select one </option>`);
+    		for (let i=0; i < data.length; i++) {
+    			$("#county").append(`<option> ${data[i].county} </option>`);
+    		}
+
+    	});//State
 
     </script>
 
