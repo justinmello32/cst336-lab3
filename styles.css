@@ -1,7 +1,54 @@
+body {
+	background-color: #457b9d;
+}
+
 form {
-	padding: 1.5rem;
+	padding: 1.2rem;
+	background-color: #a8dadc;
+	color: white;
 }
 
 h1 {
 	margin-bottom: 2rem;
+	color: white;
 }
+
+.btn-primary {
+	background-color: darkturquoise;
+	color: white;
+	padding: 1.2rem;
+}
+
+.btn-primary:hover {
+	background-color: teal;
+}
+
+#usernameError {
+	color: red;
+	font-weight: bolder;
+}
+
+#passwordAgainError {
+	color: red;
+	font-weight: bolder;
+}
+
+footer {
+	text-align: center;
+	color: white;
+	font-size: 14px;
+}
+
+#city {
+	font-weight: bolder;
+	color:cornflowerblue;
+}
+#latitude {
+	font-weight: bolder;
+	color: cornflowerblue;
+}
+#Longitude {
+	font-weight: bolder;
+	color: cornflowerblue;
+}
+
