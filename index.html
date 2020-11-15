@@ -36,6 +36,7 @@
 
 			<div class="form-group">
 				Zip Code:   <input type="text" id="zip" class="form-control" name="zip">
+                <span id="zipCodeError" class="text-danger"></span></br>
 				City:       <span id="city"></span><br>
 				Latitude:   <span id="latitude"></span><br>
 			    Longitude:  <span id="Longitude"></span><br>
@@ -77,12 +78,18 @@
     	//Displaying City from API after typing a zip code
     	$("#zip").on("change", async function(){
 
+
     		// alert($("#zip").val())
     		let zipCode = $("#zip").val();	
     		let url =  `https://itcdland.csumb.edu/~milara/ajax/cityInfoByZip?zip=${zipCode}`;
     		let response = await fetch(url);
     		let data = await response.json();
-    		console.log(data);
+    		
+            console.log(data);
+            if(data == false) {
+                $("#zipCodeError").html("Error, no zip code found");
+            }
+
     		$("#city").html(data.city);
     		$("#latitude").html(data.latitude);
 			$("#Longitude").html(data.longitude);
